@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Fale Conosco">
+    <meta name="keywords" content="Geladeiras, Frost-free, Refrigeração">
+    <meta name="author" content="Escola Sistêmica">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../CSS/site.css">
+    <script src="../js/site.js"></script>
+    <title>Código Geladeira</title>
+</head>
+<body>
+    <header>
+        <img src="../imgs/logo.png" alt="Logo do site">
+        <h1>Códito Geladeiras</h1>        
+    </header>
+
+    <nav>
+        <a href="../index.html">
+            <div class="opcao">Início</div>
+        </a>
+        <a href="../SITE/produtos.html">
+            <div class="opcao">Produtos</div>
+        </a>
+        <a href="../SITE/faleconosco.html">
+            <div class="opcao">Fale Conosco</div>
+        </a>
+    </nav>
+
+    <section>
+        <h2>Fale conosco!</h2>
+        <p>Ficou com alguma dúvida? Preencha este formulário e entraremos em contato!</p>
+        
+        <form name="frmfaleconosco" method="get" action="#" onsubmit="return validaFaleConosco()">
+            <fieldset class="faleConosco">
+                <legend>Dados pessoais: </legend>
+                <label for="name">Nome: </label>
+                <input type="text" name="txtnome" id="nome">
+                <label for="fone">Telefone: </label>
+                <input type="text" name="txtfone" id="fone">
+                <label for="email">Email: </label>
+                <input type="email" name="txtemail"id="email">
+
+            </fieldset>
+
+            <fieldset class="faleConosco">
+                <legend>Motivo do contato:</legend>
+                <label for="motivo">Motivo: </label>
+                <select name="selmotivo" id="motivo" onchange="verificaMotivo(this.value)">
+
+                    <option value="">Escolha</option>
+                    <option value="RE">Reclamação</option>
+                    <option value="SU">Sugestão</option>
+                    <option value="PR">Informação sobre produto</option>
+
+                </select>
+                <div id="opcaoProduto"></div>
+                <label for="comentario">Comentário: </label>
+                <textarea name="txacomentario" id="comentario"></textarea>
+                <button type="reset" onclick="verificaMotivo(null)">Limpar</button><button type="submit">Enviar</button>
+
+            </fieldset>
+        </form>
+    </section>
+
+    <footer>
+        Copyright &copy; Senai 2025
+    </footer>
+</body>
+</html>
