@@ -81,3 +81,9 @@ function verificaMotivo(motivo){
         }
     }
 }
+
+$(document).ready(function () {
+    $("header").load("/frontend-legado/site/general/cabecalho.html");
+    $("nav").load("/frontend-legado/site/general/menu.html");
+    $("footer").load("/frontend-legado/site/general/rodape.html");
+});
