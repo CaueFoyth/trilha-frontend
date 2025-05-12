@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">Meu Dashboard</div>
+    <nav class="menu">
+      <a href="#" class="active">🏠 Visão Geral</a>
+      <a href="#">📊 Relatórios</a>
+      <a href="#">⚙️ Configurações</a>
+      <details class="dropdown">
+        <summary>🔔 Notificações</summary>
+        <div class="dropdown-content">
+          <a href="#">Alerta 1</a>
+          <a href="#">Alerta 2</a>
+          <a href="#">Alerta 3</a>
+        </div>
+      </details>
+      <a href="#">🚪 Sair</a>
+    </nav>
+  </aside>
+
+  <div class="overlay" id="overlay"></div>
+
+  <main class="main">
+    <header class="topbar">
+      <button id="toggle-sidebar" aria-label="Alternar menu">☰</button>
+      <h1>Visão Geral</h1>
+      <div class="user-menu">
+        <span>Olá, Usuário</span>
+        <button id="user-dropdown" class="dropbtn">▾</button>
+        <nav id="user-menu-content" class="dropdown-content">
+          <a href="#">Perfil</a>
+          <a href="#">Logout</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="content">
+      <div class="cards-grid">
+        <div class="card">
+          <h3>Vendas Hoje</h3>
+          <p class="stat">R$ 5.400</p>
+        </div>
+        <div class="card">
+          <h3>Novos Usuários</h3>
+          <p class="stat">320</p>
+        </div>
+        <div class="card">
+          <h3>Pedidos Pendentes</h3>
+          <p class="stat">14</p>
+        </div>
+        <div class="card">
+          <h3>Feedbacks</h3>
+          <p class="stat">58</p>
+        </div>
+      </div>
+
+      <div class="charts-grid">
+        <div class="chart-card">
+          <h4>Receita Mensal</h4>
+          <canvas id="revenueChart"></canvas>
+        </div>
+        <div class="chart-card">
+          <h4>Usuários por Região</h4>
+          <canvas id="usersChart"></canvas>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

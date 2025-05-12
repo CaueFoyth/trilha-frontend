@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Loja SENAI</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Loja SENAI</div>
+        <nav class="header-nav">
+            <a href="#">Início</a>
+            <a href="#">Produtos</a>
+            <a href="#">Contato</a>
+            <button class="cart-btn">Carrinho (0)</button>
+        </nav>
+    </header>
+
+    <main class="store-container">
+        <aside class="filters">
+            <h2>Filtros</h2>
+
+            <div class="filter-group">
+                <h3>Categoria</h3>
+                <label><input type="checkbox" name="category" value="camisetas"> Camisetas</label>
+                <label><input type="checkbox" name="category" value="bonés"> Bonés</label>
+                <label><input type="checkbox" name="category" value="canecas"> Canecas</label>
+            </div>
+
+            <div class="filter-group">
+                <h3>Preço (R$)</h3>
+                <label>Min: <input type="number" id="price-min" value="0" min="0"></label>
+                <label>Max: <input type="number" id="price-max" value="500" min="0"></label>
+            </div>
+
+            <div class="filter-group">
+                <h3>Ordenar por</h3>
+                <select id="sort-by">
+                    <option value="default">Padrão</option>
+                    <option value="price-asc">Preço ↑</option>
+                    <option value="price-desc">Preço ↓</option>
+                    <option value="name-asc">Nome A–Z</option>
+                    <option value="name-desc">Nome Z–A</option>
+                </select>
+            </div>
+
+            <button id="apply-filters">Aplicar</button>
+            <button id="clear-filters">Limpar</button>
+        </aside>
+
+        <section class="products-grid" id="products-grid">
+        </section>
+    </main>
+
+    <footer class="footer">
+        © 2025 Loja SENAI. Todos os direitos reservados.
+    </footer>
+</body>
+
+</html>
