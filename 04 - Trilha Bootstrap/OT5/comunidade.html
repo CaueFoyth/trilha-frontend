@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidade - TypeScript Fan Club</title>
+    <!-- Bootstrap 4.6 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fab fa-typescript"></i> TypeScript Fan Club
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="recursos.html">Recursos</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="comunidade.html">Comunidade</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Jumbotron -->
+    <div class="jumbotron jumbotron-fluid bg-light">
+        <div class="container text-center">
+            <h1 class="display-4">Junte-se à Nossa Comunidade</h1>
+            <p class="lead">Conecte-se com outros desenvolvedores TypeScript e compartilhe conhecimento</p>
+        </div>
+    </div>
+
+    <!-- Eventos Section -->
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Próximos Eventos</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">TypeScript Meetup</h5>
+                        <p class="card-text"><i class="far fa-calendar-alt"></i> 15 de Abril, 2024</p>
+                        <p class="card-text"><i class="fas fa-map-marker-alt"></i> Online</p>
+                        <p class="card-text">Workshop prático sobre TypeScript avançado</p>
+                        <a href="#" class="btn btn-primary">Inscrever-se</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Hackathon TypeScript</h5>
+                        <p class="card-text"><i class="far fa-calendar-alt"></i> 20 de Maio, 2024</p>
+                        <p class="card-text"><i class="fas fa-map-marker-alt"></i> São Paulo</p>
+                        <p class="card-text">48 horas de desenvolvimento com TypeScript</p>
+                        <a href="#" class="btn btn-primary">Inscrever-se</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Conferência TypeScript</h5>
+                        <p class="card-text"><i class="far fa-calendar-alt"></i> 10 de Junho, 2024</p>
+                        <p class="card-text"><i class="fas fa-map-marker-alt"></i> Rio de Janeiro</p>
+                        <p class="card-text">Palestras e networking com especialistas</p>
+                        <a href="#" class="btn btn-primary">Inscrever-se</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comunidades Online -->
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Comunidades Online</h2>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <i class="fab fa-discord fa-3x text-primary mb-3"></i>
+                        <h5 class="card-title">Discord</h5>
+                        <p class="card-text">Junte-se ao nosso servidor Discord para discussões em tempo real, ajuda e networking.</p>
+                        <a href="#" class="btn btn-outline-primary">Entrar no Discord</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <i class="fab fa-slack fa-3x text-primary mb-3"></i>
+                        <h5 class="card-title">Slack</h5>
+                        <p class="card-text">Participe do nosso canal no Slack para networking profissional e oportunidades de trabalho.</p>
+                        <a href="#" class="btn btn-outline-primary">Entrar no Slack</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Formulário de Contato -->
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title text-center mb-4">Entre em Contato</h3>
+                        <form>
+                            <div class="form-group">
+                                <label for="nome">Nome</label>
+                                <input type="text" class="form-control" id="nome" placeholder="Seu nome">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Seu email">
+                            </div>
+                            <div class="form-group">
+                                <label for="mensagem">Mensagem</label>
+                                <textarea class="form-control" id="mensagem" rows="4" placeholder="Sua mensagem"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Enviar Mensagem</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2025 TypeScript Fan Club. Todos os direitos reservados.</p>
+            <div class="social-icons">
+                <a href="#" class="text-white mx-2"><i class="fab fa-github"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html> 

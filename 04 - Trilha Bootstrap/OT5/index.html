@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeScript Fan Club</title>
+    <!-- Bootstrap 4.6 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fab fa-typescript"></i> TypeScript Fan Club
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="recursos.html">Recursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="comunidade.html">Comunidade</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Jumbotron -->
+    <div class="jumbotron jumbotron-fluid bg-light">
+        <div class="container text-center">
+            <h1 class="display-4">Bem-vindo ao TypeScript Fan Club!</h1>
+            <p class="lead">O lugar perfeito para aprender e compartilhar conhecimento sobre TypeScript</p>
+            <hr class="my-4">
+            <p>Junte-se à nossa comunidade de desenvolvedores apaixonados por TypeScript</p>
+            <a class="btn btn-primary btn-lg" href="comunidade.html" role="button">Participar</a>
+        </div>
+    </div>
+
+    <!-- Cards Section -->
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Por que TypeScript?</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <i class="fas fa-shield-alt fa-3x text-primary mb-3"></i>
+                        <h5 class="card-title">Tipagem Estática</h5>
+                        <p class="card-text">Detecte erros durante o desenvolvimento com o sistema de tipos do TypeScript.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <i class="fas fa-code fa-3x text-primary mb-3"></i>
+                        <h5 class="card-title">Melhor Manutenção</h5>
+                        <p class="card-text">Código mais limpo e fácil de manter com recursos modernos de programação.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <i class="fas fa-rocket fa-3x text-primary mb-3"></i>
+                        <h5 class="card-title">Produtividade</h5>
+                        <p class="card-text">Aumente sua produtividade com autocompletar e documentação integrada.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Table Section -->
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Versões do TypeScript</h2>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Versão</th>
+                        <th>Data de Lançamento</th>
+                        <th>Principais Recursos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>4.9</td>
+                        <td>Novembro 2022</td>
+                        <td>Melhorias no sistema de tipos</td>
+                    </tr>
+                    <tr>
+                        <td>5.0</td>
+                        <td>Março 2023</td>
+                        <td>Decorators, const assertions</td>
+                    </tr>
+                    <tr>
+                        <td>5.1</td>
+                        <td>Junho 2023</td>
+                        <td>Melhorias de performance</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Form Section -->
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title text-center mb-4">Newsletter</h3>
+                        <form>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Seu email">
+                            </div>
+                            <div class="form-group">
+                                <label for="interesse">Interesse</label>
+                                <select class="form-control" id="interesse">
+                                    <option>Desenvolvimento Web</option>
+                                    <option>Desenvolvimento Mobile</option>
+                                    <option>Desenvolvimento Backend</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Inscrever-se</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2025 TypeScript Fan Club. Todos os direitos reservados.</p>
+            <div class="social-icons">
+                <a href="#" class="text-white mx-2"><i class="fab fa-github"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
