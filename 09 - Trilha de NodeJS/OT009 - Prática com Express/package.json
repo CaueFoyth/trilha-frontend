@@ -1,0 +1,8 @@
+{
+  "type": "module",
+  "dependencies": {
+    "-": "^0.0.1",
+    "express": "^5.1.0",
+    "save": "^2.9.0"
+  }
+}
