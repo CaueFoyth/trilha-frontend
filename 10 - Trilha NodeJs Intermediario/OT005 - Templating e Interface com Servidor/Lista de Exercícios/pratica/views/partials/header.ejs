@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>
+    <%= title %>
+  </title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+  <header>
+    <h1>
+      <%= title %>
+    </h1>
+    <nav>
+      <a href="/">Home</a>
+      <% menu.forEach(c=> { %>
+        | <a href="/cat/<%= c.id %>">
+          <%= c.name %>
+        </a>
+        <% }) %>
+          | <a href="/new">Novo Usuário</a>
+    </nav>
+
+  </header>
+  <main>

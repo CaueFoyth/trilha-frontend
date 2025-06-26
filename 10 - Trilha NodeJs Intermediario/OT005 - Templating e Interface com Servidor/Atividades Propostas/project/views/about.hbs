@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}} – {{siteName}}</title>
+</head>
+<body>
+  <h1>{{siteName}}</h1>
+  <p>{{description}}</p>
+
+  <h2>Fundação</h2>
+  <p>Este site foi fundado em <strong>{{founded}}</strong>.</p>
+
+  <h2>Equipe</h2>
+  <ul>
+    {{#each team}}
+      <li>
+        <strong>{{this.name}}</strong> – {{this.role}}
+      </li>
+    {{/each}}
+  </ul>
+
+  <p><a href="/">← Voltar para a Home</a></p>
+</body>
+</html>
