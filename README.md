@@ -17,3 +17,6 @@ O objetivo deste repositório é compartilhar meus estudos e projetos de front-e
 * Bootstrap
 * NodeJS
 * Express
+* EJS
+* ReactJs
+* Handlebars
