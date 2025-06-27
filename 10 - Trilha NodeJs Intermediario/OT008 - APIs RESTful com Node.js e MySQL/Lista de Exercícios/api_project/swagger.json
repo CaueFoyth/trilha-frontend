@@ -1,0 +1,144 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "API de Registros",
+    "description": "Documentação da API que gerencia registros com operações CRUD, filtro e paginação."
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": ["http"],
+  "paths": {
+    "/records": {
+      "get": {
+        "summary": "Listar registros",
+        "description": "Retorna uma lista de registros com suporte a paginação e filtro por nome.",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Número da página",
+            "required": false,
+            "type": "integer",
+            "default": 1
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Quantidade de itens por página",
+            "required": false,
+            "type": "integer",
+            "default": 10
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Filtro por nome",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lista de registros",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Record"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Criar um novo registro",
+        "description": "Insere um novo registro após validar os dados.",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/NewRecord"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Registro criado com sucesso"
+          },
+          "400": {
+            "description": "Erro de validação"
+          }
+        }
+      }
+    },
+    "/records/{id}": {
+      "put": {
+        "summary": "Atualizar registro por ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/NewRecord"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Registro atualizado"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Excluir registro por ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Registro excluído com sucesso"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Record": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "example": 1
+        },
+        "name": {
+          "type": "string",
+          "example": "Exemplo de Nome"
+        }
+      }
+    },
+    "NewRecord": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Novo Registro"
+        }
+      }
+    }
+  }
+}
