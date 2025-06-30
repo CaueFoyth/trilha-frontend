@@ -1,0 +1,1 @@
+Atividade adaptada para o case da empresa Schulztech
