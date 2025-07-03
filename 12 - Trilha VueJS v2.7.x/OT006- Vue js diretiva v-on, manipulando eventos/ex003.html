@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso Vue JS - diretiva v-bind, atribuindo valor em class e style</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div id="app">
+        <h1>{{ titulo }}</h1>
+
+        <!--
+        <button class="btn btn-primary" v-on:click="enviar()">Enviar</button>
+        fora de um formulário sem o elemento prevent para prevenir o comportamento padrão do botão
+        -->
+
+        <form action="https://www.google.com">
+            <button 
+                type="submit" 
+                class="btn btn-primary" 
+                v-on:click.prevent.stop="enviar()">
+                Enviar
+            </button>
+            <!-- prevent e stop para prevenir o comportamento padrão do botão -->
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                titulo: 'Vue JS',
+            },
+            methods: {
+                enviar() {
+                    alert('Enviando!');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
