@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Events: Filho para Pai</title>
+</head>
+<body>
+
+    <div id="app">
+        <button-component text="Clique Aqui" @clicked="handleClick"></button-component>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <script>
+        // 1. Definindo o componente-filho 'button-component'
+        Vue.component('button-component', {
+            props: ['text'],
+            // O template do componente-filho. Quando o botão nativo é clicado, ele chama o método 'emitClick'.
+            template: '<button @click="emitClick">{{ text }}</button>',
+            methods: {
+                emitClick() {
+                    // O filho emite um evento personalizado chamado 'clicked'.
+                    // O componente-pai pode ouvir este evento.
+                    this.$emit('clicked'); 
+                }
+            }
+        });
+
+        // 2. Criando a instância Vue (componente-pai)
+        new Vue({
+            el: '#app',
+            methods: {
+                // Este método é executado quando o evento 'clicked' é recebido do filho.
+                handleClick() {
+                    alert('O botão foi clicado!');
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

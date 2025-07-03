@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Components com Props</title>
+</head>
+<body>
+
+    <div id="app">
+        <button-component text="Clique Aqui" color="green"></button-component>
+        <button-component text="Enviar" color="blue"></button-component>
+        <button-component text="Cancelar" color="red"></button-component>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <script>
+        // Definindo o componente 'button-component'
+        Vue.component('button-component', {
+            // As propriedades que o componente pode receber
+            props: ['text', 'color'],
+            
+            // O template do componente.
+            // :style é usado para vincular o estilo dinamicamente à propriedade 'color'.
+            // {{ text }} é usado para exibir o valor da propriedade 'text'.
+            template: '<button :style="{ backgroundColor: color, color: \'white\', border: \'none\', padding: \'10px 20px\', margin: \'5px\', borderRadius: \'5px\', cursor: \'pointer\' }">{{ text }}</button>'
+        });
+
+        // Criando a instância principal do Vue para montar no elemento #app
+        new Vue({
+            el: '#app'
+        });
+    </script>
+
+</body>
+</html>
