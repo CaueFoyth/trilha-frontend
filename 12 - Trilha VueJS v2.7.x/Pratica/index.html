@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda com Vue.js - Melhorias</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+
+        #app {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        input {
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        button[type="submit"] {
+            background-color: #5cb85c;
+        }
+        
+        .edit {
+            background-color: blue;
+        }
+        
+        .delete {
+            background-color: red;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #e7e7e7;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .message {
+            background-color: #dff0d8; /* Verde claro */
+            color: #3c763d; /* Verde escuro */
+            padding: 10px;
+            margin: 20px 0;
+            text-align: center;
+            border: 1px solid #d6e9c6; /* Borda verde */
+            border-radius: 5px;
+        }
+
+        .counter {
+            text-align: center; /* Centraliza o contador */
+            font-size: 18px;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app">
+        <h1>Cadastro de Agenda</h1>
+        
+        <form @submit.prevent="editIndex === -1 ? addContact() : updateContact()">
+            <input type="text" v-model="currentContact.name" placeholder="Nome" required>
+            <input type="text" v-model="currentContact.phone" placeholder="Telefone" required>
+            <input type="email" v-model="currentContact.email" placeholder="Email" required>
+            <button type="submit">{{ editIndex === -1 ? 'Adicionar' : 'Atualizar' }}</button>
+        </form>
+
+        <div v-if="messageVisible" class="message">{{ messageText }}</div>
+        
+        <div class="counter">Total de contatos: {{ contactsCount }}</div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>Email</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(contact, index) in contacts" :key="index">
+                    <td>{{ contact.name }}</td>
+                    <td>{{ contact.phone }}</td>
+                    <td>{{ contact.email }}</td>
+                    <td>
+                        <button class="edit" @click="editContact(index)">Editar</button>
+                        <button class="delete" @click="deleteContact(index)">Deletar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                currentContact: {
+                    name: '',
+                    phone: '',
+                    email: ''
+                },
+                contacts: [],
+                editIndex: -1,
+                messageVisible: false, // Controla a visibilidade da mensagem
+                messageText: '' // Texto da mensagem
+            },
+            computed: {
+                contactsCount() {
+                    return this.contacts.length; // Contador de contatos
+                }
+            },
+            methods: {
+                addContact() {
+                    if (this.currentContact.name && this.currentContact.phone && this.currentContact.email) {
+                        this.contacts.push({ ...this.currentContact });
+                        this.showMessage('Contato adicionado com sucesso!'); // Exibe a mensagem
+                        this.resetForm();
+                    }
+                },
+                editContact(index) {
+                    this.currentContact = { ...this.contacts[index] };
+                    this.editIndex = index;
+                },
+                updateContact() {
+                    this.$set(this.contacts, this.editIndex, this.currentContact);
+                    this.showMessage('Contato atualizado com sucesso!'); // Exibe a mensagem
+                    this.resetForm();
+                },
+                deleteContact(index) {
+                    this.contacts.splice(index, 1);
+                },
+                resetForm() {
+                    this.currentContact = { name: '', phone: '', email: '' };
+                    this.editIndex = -1;
+                },
+                showMessage(text) {
+                    this.messageText = text;
+                    this.messageVisible = true;
+                    setTimeout(() => {
+                        this.messageVisible = false;
+                    }, 4000);
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
