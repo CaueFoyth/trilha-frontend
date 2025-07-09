@@ -21,3 +21,4 @@ O objetivo deste repositório é compartilhar meus estudos e projetos de front-e
 * ReactJs
 * Handlebars
 * Vue.js
+* TypeScript
